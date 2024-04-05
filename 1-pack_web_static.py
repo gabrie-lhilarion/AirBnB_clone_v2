@@ -10,7 +10,7 @@ def do_pack():
     """
         Generates a .tgz archive from contents of web_static
     """
-    time = datetime.now(datetime.UTC).strftime('%Y%m%d%H%M%S')
+    time = datetime.utcnow().strftime('%Y%m%d%H%M%S%f')[:-3]
     file_name = "versions/web_static_{}.tgz".format(time)
     try:
         local("mkdir -p ./versions")
