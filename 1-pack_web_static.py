@@ -17,5 +17,6 @@ def do_pack():
         local("tar --create --verbose -z --file={} ./web_static"
               .format(file_name))
         return file_name
-    except:
+    except Exception as e:
+        print("An error occurred:", str(e))
         return None
